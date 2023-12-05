@@ -48,13 +48,25 @@
     }
 </style>
 
-<body>
+<body x-data="{
+    imageAffiche: 'https://picsum.photos/id/237/200/300'
+}">
     <h1>Galerie</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam maiores, ut illum itaque iusto nesciunt ipsam
         suscipit, velit, consectetur id impedit quis. Perspiciatis molestiae unde repudiandae corrupti facilis vel
         provident!</p>
-    <div class="overlay"></div>
-    <figure><img src="https://picsum.photos/id/237/400/300" alt="image 237... un chiot"></figure>
+    <div class="overlay" x-show="imageAffiche" x-transition.duration.500ms @click="imageAffiche = null">
+
+
+
+
+        <figure><img :src="imageAffiche">
+            <img src="https://picsum.photos/id/236/200/300" alt="miniature chiot"
+                @click="imageAffiche = 'https://picsum.photos/id/236/200/300'">
+            <img src="https://picsum.photos/id/237/200/300" alt="miniature chiot"
+                @click="imageAffiche = 'https://picsum.photos/id/237/200/300'">
+
+
     </div>
 </body>
 
